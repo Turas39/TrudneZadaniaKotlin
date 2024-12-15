@@ -11,3 +11,9 @@ class Coin : RollingTool {
         return if (Random.nextBoolean()) "Orzeł" else "Reszka"
     }
 }
+
+class Dice : RollingTool {
+    override fun roll(): String {
+        return (1..6).random().toString()
+    }
+}
