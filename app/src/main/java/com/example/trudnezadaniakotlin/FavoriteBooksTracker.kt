@@ -43,5 +43,15 @@ fun main() {
     println("Wszystkie książki:")
     bookManager.displayBooks()
 
+    println("\nKsiążki autorstwa Andrzeja Sapkowskiego:")
+    val filteredByAuthor = bookManager.filterByAuthor("Andrzej Sapkowski")
+    filteredByAuthor.forEach { println(it.title) }
 
+    println("\nKsiążki wydane w 1977 roku:")
+    val filteredByYear = bookManager.filterByYear(1977)
+    filteredByYear.forEach { println(it.title) }
+
+    println("\nKsiążki posortowane alfabetycznie:")
+    val sortedBooks = bookManager.sortBooksByTitle()
+    sortedBooks.forEach { println(it.title) }
 }
