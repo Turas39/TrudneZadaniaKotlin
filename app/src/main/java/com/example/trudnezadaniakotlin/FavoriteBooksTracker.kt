@@ -17,5 +17,17 @@ class BookManager {
         return books.filter { it.year == year }
     }
 
+    fun sortBooksByTitle(): List<Book> {
+        return books.sortedBy { it.title }
+    }
 
+    fun displayBooks() {
+        if (books.isEmpty()) {
+            println("Brak książek na liście.")
+        } else {
+            books.forEach {
+                println("Tytuł: ${it.title}, Autor: ${it.author}, Rok wydania: ${it.year}")
+            }
+        }
+    }
 }
