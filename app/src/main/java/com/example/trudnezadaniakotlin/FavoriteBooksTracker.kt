@@ -9,5 +9,13 @@ class BookManager {
         books.add(book)
     }
 
+    fun filterByAuthor(author: String): List<Book> {
+        return books.filter { it.author.equals(author, ignoreCase = true) }
+    }
+
+    fun filterByYear(year: Int): List<Book> {
+        return books.filter { it.year == year }
+    }
+
 
 }
