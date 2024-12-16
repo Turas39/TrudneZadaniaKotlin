@@ -9,5 +9,10 @@ object Quotes {
         "Widzę, że niektóre rzeczy się nie zmieniają. Night City to ciągle syf i kluski z paśnika."
     )
 
-
+    fun getRandomQuote(): String {
+        if (quotesList.isEmpty()) {
+            return "Brak dostępnych cytatów."
+        }
+        return quotesList[Random.nextInt(quotesList.size)]
+    }
 }
