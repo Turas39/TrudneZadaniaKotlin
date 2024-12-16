@@ -15,4 +15,10 @@ object Quotes {
         }
         return quotesList[Random.nextInt(quotesList.size)]
     }
+
+    fun addQuote(quote: String) {
+        if (quote.isNotBlank()) {
+            quotesList.add(quote)
+        }
+    }
 }
