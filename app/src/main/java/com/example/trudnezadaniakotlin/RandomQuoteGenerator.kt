@@ -22,3 +22,34 @@ object Quotes {
         }
     }
 }
+
+fun main() {
+    println("Witaj w aplikacji do cytatów!")
+
+    while (true) {
+        println("Wybierz opcję: ")
+        println("1. Wyświetl losowy cytat")
+        println("2. Dodaj nowy cytat")
+        println("3. Wyjście")
+
+        when (readLine()?.trim()) {
+            "1" -> println("Losowy cytat: ${Quotes.getRandomQuote()}")
+            "2" -> {
+                println("Napisz cytat który chcesz dodać: ")
+                val newQuote = readLine()
+                if (newQuote != null && newQuote.isNotBlank()) {
+                    Quotes.addQuote(newQuote)
+                    println("Udało ci się dodać nowy cytat")
+                } else {
+                    println("Niepoprawny cytat. Spróbuj ponownie.")
+                }
+            }
+            "3" -> {
+                println("Żegnaj!")
+                break
+            }
+            else -> println("Zła opcja. Spróbuj ponownie.")
+        }
+
+    }
+}
