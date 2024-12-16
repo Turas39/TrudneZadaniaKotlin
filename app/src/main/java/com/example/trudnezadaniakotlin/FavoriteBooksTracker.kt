@@ -31,3 +31,17 @@ class BookManager {
         }
     }
 }
+
+fun main() {
+    val bookManager = BookManager()
+
+    bookManager.addBook(Book("Wiedźmin. Rozdroże Kruków", "Andrzej Sapkowski", 2024))
+    bookManager.addBook(Book("Harry Potter i przeklęte dziecko", "J.K. Rowling", 2016))
+    bookManager.addBook(Book("Silmarillion", "J.R.R. Tolkien", 1977))
+    bookManager.addBook(Book("Mitologia Nordycka", "Neil Gaiman", 2017))
+
+    println("Wszystkie książki:")
+    bookManager.displayBooks()
+
+
+}
