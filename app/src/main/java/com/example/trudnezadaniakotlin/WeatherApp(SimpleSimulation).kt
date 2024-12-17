@@ -31,4 +31,20 @@ fun main() {
         City("Kaplityny", Snowy()),
         City("Łukta", Rainy())
     )
+
+    println("Dostępne miasta:")
+    cities.forEachIndexed { index, city ->
+        println("${index + 1}. ${city.name}")
+    }
+
+    println("\nWybierz numer miasta którego chcesz znać pogodę: ")
+    val choice = readLine()?.toIntOrNull()
+
+    if (choice != null && choice in 1..cities.size) {
+        val selectedCity = cities[choice - 1]
+        println("\nPogoda dla ${selectedCity.name}: ")
+        println(selectedCity.weather.displayForecast())
+    } else {
+        println("Zły wybór. Uruchom program na nowo i wybierz poprawne miasto.")
+    }
 }
