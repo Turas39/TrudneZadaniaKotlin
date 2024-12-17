@@ -39,3 +39,23 @@ class TrueFalseQuestion(
     }
 }
 
+class Quiz(private  val questions: List<Question>) {
+
+    fun startQuiz() {
+        var correctAnswers = 0
+
+        for (question in questions) {
+            println(question.askQuestion())
+            val userAnswer = readLine() ?: ""
+            if (question.checkAnswer(userAnswer)) {
+                println("Poprawna odpowieź!")
+                correctAnswers++
+            } else {
+                println("Błędna odpowiedź")
+            }
+        }
+
+        println("Twój wynik: $correctAnswers/${questions.size}")
+    }
+}
+
