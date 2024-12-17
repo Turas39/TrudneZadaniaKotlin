@@ -59,3 +59,24 @@ class Quiz(private  val questions: List<Question>) {
     }
 }
 
+fun main() {
+    val questions = listOf(
+        MultipleChoiceQuestion(
+            "Kto jest autorem cyklu książek Wiedźmin?",
+            listOf("J.R.R. Tolkien", "Andrzej Sapkowski", "Mike Tyson", "J.K. Rowling"),
+            "Andrzej Sapkowski"
+        ),
+        TrueFalseQuestion(
+            "Jedną z głównych rol w grze Cyberpunk 2077 zagrał Keanu Reeves?",
+            true
+        ),
+        MultipleChoiceQuestion(
+            "Kto jest najstarszym synem Ragnara Lothbroka w serialu Wikingowie?",
+            listOf("Sigurd Wężowe Oko", "Ivar Bez Kości", "Ubbe", "Bjorn Żelaznoboki", "Hvitserk"),
+            "Bjorn Żelaznoboki"
+        )
+    )
+
+    val quiz = Quiz(questions)
+    quiz.startQuiz()
+}
