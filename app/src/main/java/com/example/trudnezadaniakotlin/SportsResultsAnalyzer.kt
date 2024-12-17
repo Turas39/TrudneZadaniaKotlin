@@ -20,5 +20,17 @@ class MatchAnalyzer(val matches: MutableList<Match> = mutableListOf()) {
         return matches.sumOf { it.score }
     }
 
+    fun maxScore(): Int? {
+        return matches.maxOfOrNull { it.score }
+    }
 
+    fun scoreDifference(): Int? {
+        val max = matches.maxOfOrNull { it.score }
+        val min = matches.minOfOrNull { it.score }
+        return  if (max != null && min != null) max - min else null
+    }
+
+    fun countMatchesAboveThreshold(threshold: Int): Int {
+        return matches.count { it.score > threshold }
+    }
 }
